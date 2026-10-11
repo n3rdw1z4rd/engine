@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "lib": [
+            "ES2023",
+            "DOM",
+            "DOM.Iterable",
+            "ESNext.Decorators"
+        ],
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "isolatedModules": true,
+        "verbatimModuleSyntax": true,
+        "skipLibCheck": true,
+        "useDefineForClassFields": true,
+        "composite": true,
+        "rootDir": "src",
+        "outDir": "dist",
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "tsBuildInfoFile": "dist/.tsbuildinfo"
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "**/_*"
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "name": "@n3rdw1z4rd/engine",
+    "version": "0.0.1",
+    "description": "Runtime for a browser-first, Three.js game engine: objects, components and scripts.",
+    "type": "module",
+    "license": "MIT",
+    "author": "n3rdw1z4rd",
+    "sideEffects": false,
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "vite build && tsc -p tsconfig.build.json",
+        "typecheck": "tsc -p tsconfig.json --noEmit"
+    },
+    "dependencies": {
+        "@n3rdw1z4rd/core": "^0.18.4"
+    },
+    "peerDependencies": {
+        "simplex-noise": "^4.0.3",
+        "three": "^0.186.1"
+    },
+    "devDependencies": {
+        "@types/three": "^0.186.0",
+        "simplex-noise": "^4.0.3",
+        "three": "^0.186.1"
+    }
+}

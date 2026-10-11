@@ -22,7 +22,10 @@
         "outDir": "dist",
         "declaration": true,
         "emitDeclarationOnly": true,
-        "tsBuildInfoFile": "dist/.tsbuildinfo"
+        "tsBuildInfoFile": "dist/.tsbuildinfo",
+        "types": [
+            "node"
+        ]
     },
     "include": [
         "src"

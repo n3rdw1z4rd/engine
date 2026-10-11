@@ -1,42 +1,84 @@
 {
     "name": "@n3rdw1z4rd/engine",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Runtime for a browser-first, Three.js game engine: objects, components and scripts.",
-    "type": "module",
+    "keywords": [
+        "game-engine",
+        "threejs",
+        "three.js",
+        "ecs",
+        "webgl",
+        "typescript",
+        "gamedev"
+    ],
+    "homepage": "https://github.com/n3rdw1z4rd/engine#readme",
+    "bugs": {
+        "url": "https://github.com/n3rdw1z4rd/engine/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/n3rdw1z4rd/engine.git"
+    },
     "license": "MIT",
     "author": "n3rdw1z4rd",
+    "type": "module",
     "sideEffects": false,
     "main": "./dist/index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
+            "n3rdw1z4rd-source": "./src/index.ts",
             "types": "./dist/index.d.ts",
             "import": "./dist/index.js"
-        }
+        },
+        "./vite": {
+            "types": "./dist/vite.d.ts",
+            "import": "./dist/vite.js"
+        },
+        "./package.json": "./package.json"
     },
     "files": [
-        "dist"
+        "dist",
+        "src"
     ],
+    "engines": {
+        "node": "^20.19.0 || >=22.12.0"
+    },
     "scripts": {
         "build": "vite build && tsc -p tsconfig.build.json",
-        "typecheck": "tsc -p tsconfig.json --noEmit"
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm run typecheck"
     },
     "dependencies": {
         "@n3rdw1z4rd/core": "^0.18.4"
     },
     "peerDependencies": {
+        "esbuild": ">=0.25.0",
         "simplex-noise": "^4.0.3",
-        "three": "^0.186.1"
+        "three": "^0.186.1",
+        "vite": ">=8.0.0"
+    },
+    "peerDependenciesMeta": {
+        "esbuild": {
+            "optional": true
+        },
+        "vite": {
+            "optional": true
+        }
     },
     "devDependencies": {
+        "@types/node": "^26.6.5",
         "@types/three": "^0.186.0",
+        "esbuild": "^0.28.2",
         "simplex-noise": "^4.0.3",
         "three": "^0.186.1",
         "typescript": "^7.0.2",
         "vite": "^8.3.4"
     },
     "allowScripts": {
-        "fsevents@2.3.3": true
+        "fsevents@2.3.3": true,
+        "esbuild@0.28.2": true
     }
 }

@@ -15,6 +15,18 @@ npm install -D vite esbuild   # for the decorator plugin, see below
 
 `three` and `simplex-noise` are peer dependencies, shared with `@n3rdw1z4rd/core`.
 
+**Using a local checkout** (`file:../engine` or `npm link`) instead of the npm package? The linked engine has its own `node_modules`, so Vite can bundle a second copy of Three.js. You'll see `THREE.WARNING: Multiple instances of Three.js being imported`, and `instanceof` checks between your objects and the engine's can fail. Tell Vite to use your project's copy:
+
+```ts
+// vite.config.ts
+export default defineConfig({
+    plugins: [decorators()],
+    resolve: { dedupe: ['three', '@n3rdw1z4rd/core', 'simplex-noise'] },
+});
+```
+
+Installs from npm don't need this: `three` is a peer dependency, so npm installs a single shared copy.
+
 ## Quick start
 
 ```ts

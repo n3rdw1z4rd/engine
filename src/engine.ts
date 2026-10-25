@@ -1,4 +1,4 @@
-import { Renderer } from '@n3rdw1z4rd/core';
+import { Renderer } from '@n3rdw1z4rd/core/three';
 import { Camera, OrthographicCamera, PerspectiveCamera, Scene } from 'three';
 import { World } from './world';
 

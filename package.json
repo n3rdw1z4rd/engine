@@ -52,7 +52,7 @@
         "prepublishOnly": "npm run typecheck"
     },
     "dependencies": {
-        "@n3rdw1z4rd/core": "^0.18.4"
+        "@n3rdw1z4rd/core": "^0.20.0"
     },
     "peerDependencies": {
         "esbuild": ">=0.25.0",
@@ -74,8 +74,8 @@
         "esbuild": "^0.28.2",
         "simplex-noise": "^4.0.3",
         "three": "^0.186.1",
-        "typescript": "^7.0.2",
-        "vite": "^8.3.4"
+        "typescript": "^6.0.3",
+        "vite": "^8.3.5"
     },
     "allowScripts": {
         "fsevents@2.3.3": true,
